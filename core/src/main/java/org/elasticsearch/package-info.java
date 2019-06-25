@@ -18,6 +18,6 @@
  */
 
 /**
- * A distributed RESTful search engine.
+ * A distributed RESTful search engine. 分布式RESTful搜索引擎
  */
 package org.elasticsearch;

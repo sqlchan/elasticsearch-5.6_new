@@ -24,7 +24,7 @@ import org.elasticsearch.common.io.stream.StreamInput;
 import java.io.IOException;
 
 /**
- * A generic exception indicating failure to generate.
+ * A generic exception indicating failure to generate.  指示生成失败的一般异常。
  *
  *
  */

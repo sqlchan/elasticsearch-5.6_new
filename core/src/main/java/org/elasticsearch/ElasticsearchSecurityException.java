@@ -24,7 +24,7 @@ import org.elasticsearch.rest.RestStatus;
 import java.io.IOException;
 
 /**
- * Generic security exception
+ * Generic security exception   通用安全异常
  */
 public class ElasticsearchSecurityException extends ElasticsearchStatusException {
     /**

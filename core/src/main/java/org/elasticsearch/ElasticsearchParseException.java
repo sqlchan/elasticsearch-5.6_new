@@ -26,6 +26,7 @@ import java.io.IOException;
 
 /**
  * Unchecked exception that is translated into a {@code 400 BAD REQUEST} error when it bubbles out over HTTP.
+ * 未选中的异常，当它在HTTP上冒泡时转换为@code 400 bad request错误。
  */
 public class ElasticsearchParseException extends ElasticsearchException {
 

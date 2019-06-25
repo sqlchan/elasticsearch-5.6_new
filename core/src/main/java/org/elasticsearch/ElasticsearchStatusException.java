@@ -28,6 +28,7 @@ import java.io.IOException;
 /**
  * Exception who's {@link RestStatus} is arbitrary rather than derived. Used, for example, by reindex-from-remote to wrap remote exceptions
  * that contain a status.
+ * 例外情况是@link reststatus是任意的，而不是派生的。例如，通过从远程重新索引来包装包含状态的远程异常。
  */
 public class ElasticsearchStatusException extends ElasticsearchException {
     private final RestStatus status;

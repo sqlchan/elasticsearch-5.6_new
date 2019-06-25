@@ -25,6 +25,7 @@ import java.io.IOException;
 
 /**
  * The same as {@link java.util.concurrent.TimeoutException} simply a runtime one.
+ * 与{@链接Java.UTI.Orth.TimeOutExtExe}相同，只不过是运行时的一个。
  *
  *
  */

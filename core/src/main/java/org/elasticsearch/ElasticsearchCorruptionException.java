@@ -22,7 +22,7 @@ import java.io.IOException;
 
 /**
  * This exception is thrown when Elasticsearch detects
- * an inconsistency in one of it's persistent files.
+ * an inconsistency in one of it's persistent files.    当ElasticSearch检测到它的某个持久文件中存在不一致时，就会抛出此异常。
  */
 public class ElasticsearchCorruptionException extends IOException {
 

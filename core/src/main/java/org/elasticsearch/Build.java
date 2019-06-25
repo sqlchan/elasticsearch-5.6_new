@@ -30,12 +30,13 @@ import java.util.jar.JarInputStream;
 import java.util.jar.Manifest;
 
 /**
- * Information about a build of Elasticsearch.
+ * Information about a build of Elasticsearch. 关于构建ElasticSearch的信息。
  */
 public class Build {
     /**
      * The current build of Elasticsearch. Filled with information scanned at
      * startup from the jar.
+     * ElasticSearch的当前版本。从jar启动时扫描的信息。
      */
     public static final Build CURRENT;
 
@@ -58,6 +59,7 @@ public class Build {
             }
         } else {
             // not running from the official elasticsearch jar file (unit tests, IDE, uber client jar, shadiness)
+            // 不从正式的ElasticSearch JAR文件运行（单元测试、IDE、Uber客户机JAR、shadoness）
             shortHash = "Unknown";
             date = "Unknown";
             final String buildSnapshot = System.getProperty("build.snapshot");
@@ -88,7 +90,7 @@ public class Build {
     private final boolean isSnapshot;
 
     /**
-     * The location of the code source for Elasticsearch
+     * The location of the code source for Elasticsearch    ElasticSearch的代码源位置
      *
      * @return the location of the code source for Elasticsearch which may be null
      */

@@ -23,6 +23,9 @@ package org.elasticsearch;
  * Provides a static final field that can be used to check if assertions are enabled. Since this field might be used elsewhere to check if
  * assertions are enabled, if you are running with assertions enabled for specific packages or classes, you should enable assertions on this
  * class too (e.g., {@code -ea org.elasticsearch.Assertions -ea org.elasticsearch.cluster.service.MasterService}).
+ * 提供一个静态final字段，可用于检查是否启用断言。因为这个字段可能在其他地方用于检查是否启用了断言，
+ * 如果您在运行特定包或类时启用了断言，那么您也应该在这个类上启用断言(例如，{@code -ea org.elasticsearch)。
+ * 断言ea org.elasticsearch.cluster.service.MasterService})。
  */
 public final class Assertions {
 
@@ -37,6 +40,7 @@ public final class Assertions {
         /*
          * If assertions are enabled, the following line will be evaluated and enabled will have the value true, otherwise when assertions
          * are disabled enabled will have the value false.
+         * 如果启用了断言，下面的行将被计算，启用的值将为true，否则禁用断言时启用的值将为false。
          */
         // noinspection ConstantConditions,AssertWithSideEffects
         assert enabled = true;
