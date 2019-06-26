@@ -21,6 +21,7 @@ package org.elasticsearch.action;
 
 /**
  * An {@link ActionFuture} that listeners can be added to.
+ * 可添加侦听器的@link actionfuture。
  *
  *
  */
@@ -28,6 +29,7 @@ public interface ListenableActionFuture<T> extends ActionFuture<T> {
 
     /**
      * Add an action listener to be invoked when a response has received.
+     * 添加接收到响应时要调用的操作侦听器。
      */
     void addListener(ActionListener<T> listener);
 }

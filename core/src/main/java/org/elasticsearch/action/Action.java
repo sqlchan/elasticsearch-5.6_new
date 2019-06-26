@@ -23,6 +23,7 @@ import org.elasticsearch.client.ElasticsearchClient;
 
 /**
  * Base action. Supports building the <code>Request</code> through a <code>RequestBuilder</code>.
+ * 基本动作。支持构建<code>request<code>through a<code>requestbuilder<code>
  */
 public abstract class Action<Request extends ActionRequest, Response extends ActionResponse, RequestBuilder extends ActionRequestBuilder<Request, Response, RequestBuilder>>
         extends GenericAction<Request, Response> {
@@ -33,6 +34,7 @@ public abstract class Action<Request extends ActionRequest, Response extends Act
 
     /**
      * Creates a new request builder given the client provided as argument
+     * 为作为参数提供的客户端创建新的请求生成器
      */
     public abstract RequestBuilder newRequestBuilder(ElasticsearchClient client);
 }

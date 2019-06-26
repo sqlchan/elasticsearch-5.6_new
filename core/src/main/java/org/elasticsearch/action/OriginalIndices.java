@@ -28,10 +28,12 @@ import java.util.Arrays;
 
 /**
  * Used to keep track of original indices within internal (e.g. shard level) requests
+ * 用于跟踪内部（如碎片级别）请求中的原始索引
  */
 public final class OriginalIndices implements IndicesRequest {
 
     //constant to use when original indices are not applicable and will not be serialized across the wire
+    // 当原始索引不适用且不会跨线序列化时使用的常量
     public static final OriginalIndices NONE = new OriginalIndices(null, null);
 
     private final String[] indices;

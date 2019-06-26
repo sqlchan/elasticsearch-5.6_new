@@ -30,6 +30,7 @@ import java.util.function.Supplier;
 /**
  * A simple base class for action response listeners, defaulting to using the SAME executor (as its
  * very common on response handlers).
+ * 操作响应侦听器的简单基类，默认使用相同的执行器（在响应处理程序上非常常见）。
  */
 public class ActionListenerResponseHandler<Response extends TransportResponse> implements TransportResponseHandler<Response> {
 

@@ -24,21 +24,26 @@ package org.elasticsearch.action;
  * one or more indices and one or more aliases. Meant to be used for aliases management requests (e.g. add/remove alias,
  * get aliases) that hold aliases and indices in separate fields.
  * Allows to retrieve which indices and aliases the action relates to.
+ * 需要由与一个或多个索引和一个或多个别名相关的所有@link org.elasticsearch.action.actionRequest子类实现。
+ * 用于别名管理请求（例如，添加/删除别名、获取别名），将别名和索引保存在单独的字段中。允许检索与操作相关的索引和别名。
  */
 public interface AliasesRequest extends IndicesRequest.Replaceable {
 
     /**
      * Returns the array of aliases that the action relates to
+     * 返回与操作相关的别名数组
      */
     String[] aliases();
 
     /**
      * Sets the array of aliases that the action relates to
+     * 设置与操作相关的别名数组
      */
     AliasesRequest aliases(String... aliases);
 
     /**
      * Returns true if wildcards expressions among aliases should be resolved, false otherwise
+     * 如果应解析别名之间的通配符表达式，则返回true，否则返回false
      */
     boolean expandAliasesWildcards();
 }

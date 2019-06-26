@@ -56,7 +56,7 @@ public abstract class ActionRequestBuilder<Request extends ActionRequest, Respon
     }
 
     /**
-     * Short version of execute().actionGet().
+     * Short version of execute().actionGet().  execute（）.actionget（）的短版本。
      */
     public Response get() {
         return execute().actionGet();
@@ -82,6 +82,7 @@ public abstract class ActionRequestBuilder<Request extends ActionRequest, Respon
 
     /**
      * A callback to additionally process the request before its executed
+     * 在执行请求之前对其进行额外处理的回调
      */
     protected Request beforeExecute(Request request) {
         return request;

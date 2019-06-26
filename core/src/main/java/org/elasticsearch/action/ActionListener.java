@@ -28,6 +28,7 @@ import java.util.function.Consumer;
 
 /**
  * A listener for action responses or failures.
+ * 动作响应或失败的监听器。
  */
 public interface ActionListener<Response> {
     /**

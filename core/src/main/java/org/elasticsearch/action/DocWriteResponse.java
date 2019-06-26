@@ -44,6 +44,7 @@ import static org.elasticsearch.common.xcontent.XContentParserUtils.ensureExpect
 
 /**
  * A base class for the response of a write operation that involves a single doc
+ * 涉及单个文档的写入操作响应的基类
  */
 public abstract class DocWriteResponse extends ReplicationResponse implements WriteResponse, StatusToXContentObject {
 
@@ -58,6 +59,7 @@ public abstract class DocWriteResponse extends ReplicationResponse implements Wr
     /**
      * An enum that represents the the results of CRUD operations, primarily used to communicate the type of
      * operation that occurred.
+     * 表示CRUD操作结果的枚举，主要用于通信发生的操作类型。
      */
     public enum Result implements Writeable {
         CREATED(0),
@@ -171,6 +173,8 @@ public abstract class DocWriteResponse extends ReplicationResponse implements Wr
      * Did this request force a refresh? Requests that set {@link WriteRequest#setRefreshPolicy(RefreshPolicy)} to
      * {@link RefreshPolicy#IMMEDIATE} will always return true for this. Requests that set it to {@link RefreshPolicy#WAIT_UNTIL} will
      * only return true here if they run out of refresh listener slots (see {@link IndexSettings#MAX_REFRESH_LISTENERS_PER_SHARD}).
+     * 此请求是否强制刷新？将@link writerequest set refreshpolicy（refreshpolicy）设置为@link refreshpolicy immediate的请求将始终为此返回true。
+     * 将其设置为@link refreshpolicy等待的请求只有在刷新侦听器插槽用完时才会在此处返回true（请参见@link indexsettings max refresh _listeners _per shard）。
      */
     public boolean forcedRefresh() {
         return forcedRefresh;
@@ -181,7 +185,8 @@ public abstract class DocWriteResponse extends ReplicationResponse implements Wr
         this.forcedRefresh = forcedRefresh;
     }
 
-    /** returns the rest status for this response (based on {@link ShardInfo#status()} */
+    /** returns the rest status for this response (based on {@link ShardInfo#status()}
+     * 返回此响应的其余状态（基于@link shardinfo status（）*/
     @Override
     public RestStatus status() {
         return getShardInfo().status();
@@ -190,6 +195,8 @@ public abstract class DocWriteResponse extends ReplicationResponse implements Wr
     /**
      * Return the relative URI for the location of the document suitable for use in the {@code Location} header. The use of relative URIs is
      * permitted as of HTTP/1.1 (cf. https://tools.ietf.org/html/rfc7231#section-7.1.2).
+     * 返回适合在@code location头中使用的文档位置的相对URI。
+     * 从http/1.1开始允许使用相对URI（参见https://tools.ietf.org/html/rfc7231第7.1.2节）。
      *
      * @param routing custom routing or {@code null} if custom routing is not used
      * @return the relative URI for the location of the document
@@ -201,6 +208,7 @@ public abstract class DocWriteResponse extends ReplicationResponse implements Wr
         final String encodedRouting;
         try {
             // encode the path components separately otherwise the path separators will be encoded
+            // 编码的路径组件分离器分别否则将路径编码
             encodedIndex = URLEncoder.encode(getIndex(), "UTF-8");
             encodedType = URLEncoder.encode(getType(), "UTF-8");
             encodedId = URLEncoder.encode(getId(), "UTF-8");

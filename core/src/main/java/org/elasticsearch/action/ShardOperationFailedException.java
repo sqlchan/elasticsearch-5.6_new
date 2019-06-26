@@ -25,23 +25,25 @@ import org.elasticsearch.rest.RestStatus;
 
 /**
  * An exception indicating that a failure occurred performing an operation on the shard.
- *
+ *指示对碎片执行操作失败的异常。
  *
  */
 public interface ShardOperationFailedException extends Streamable, ToXContent {
 
     /**
      * The index the operation failed on. Might return <tt>null</tt> if it can't be derived.
+     * 操作失败的索引。如果无法导出，则可能返回<t t>null。
      */
     String index();
 
     /**
      * The index the operation failed on. Might return <tt>-1</tt> if it can't be derived.
+     * 操作失败的索引。如果无法导出，则可能返回<t t>-1。
      */
     int shardId();
 
     /**
-     * The reason of the failure.
+     * The reason of the failure.失败的原因。
      */
     String reason();
 

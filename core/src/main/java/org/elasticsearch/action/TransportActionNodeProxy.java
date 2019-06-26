@@ -28,6 +28,7 @@ import org.elasticsearch.transport.TransportService;
 
 /**
  * A generic proxy that will execute the given action against a specific node.
+ * 将对特定节点执行给定操作的通用代理。
  */
 public class TransportActionNodeProxy<Request extends ActionRequest, Response extends ActionResponse> extends AbstractComponent {
 

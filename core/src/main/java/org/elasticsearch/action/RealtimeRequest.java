@@ -22,11 +22,13 @@ package org.elasticsearch.action;
 /**
  * Indicates that a request can execute in realtime (reads from the translog).
  * All {@link ActionRequest} that are realtime should implement this interface.
+ * 指示请求可以实时执行（从音译中读取）。所有实时的@link actionrequest都应该实现这个接口。
  */
 public interface RealtimeRequest {
 
     /**
      * @param realtime Controls whether this request should be realtime by reading from the translog.
+     *                 通过从音译中读取来控制此请求是否应为实时请求。
      */
     <R extends RealtimeRequest> R realtime(boolean realtime);
 

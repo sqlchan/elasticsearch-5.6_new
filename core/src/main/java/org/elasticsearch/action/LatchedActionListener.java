@@ -24,6 +24,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * An action listener that allows passing in a {@link CountDownLatch} that
  * will be counted down after onResponse or onFailure is called
+ * 允许传入将在调用onResponse或onFailure后倒计时的@link countdownloatch的操作侦听器。
  */
 public class LatchedActionListener<T> implements ActionListener<T> {
 

@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * An extension to {@link Future} allowing for simplified "get" operations.
- *
+ *对@link future的扩展，允许简化“get”操作。
  *
  */
 public interface ActionFuture<T> extends Future<T> {
@@ -35,6 +35,8 @@ public interface ActionFuture<T> extends Future<T> {
      * Similar to {@link #get()}, just catching the {@link InterruptedException} and throwing
      * an {@link IllegalStateException} instead. Also catches
      * {@link java.util.concurrent.ExecutionException} and throws the actual cause instead.
+     * 类似于@link get（），只需捕获@link interruptedexception并引发@link illegalStateException。
+     * 还捕获{@链接java. UTI.Orth.CurrimeExtExist}，并抛出实际原因。
      */
     T actionGet();
 

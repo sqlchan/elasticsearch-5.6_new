@@ -35,12 +35,15 @@ public abstract class ActionRequest extends TransportRequest {
         // this does not set the listenerThreaded API, if needed, its up to the caller to set it
         // since most times, we actually want it to not be threaded...
         // this.listenerThreaded = request.listenerThreaded();
+        // 这不会设置listenerthreaded api，如果需要，它取决于调用方设置它，
+        // 因为大多数时候，我们实际上希望它不被线程化…this.listenerthreaded=request.listenerthreaded（）；
     }
 
     public abstract ActionRequestValidationException validate();
 
     /**
      * Should this task store its result after it has finished?
+     * 此任务是否应在完成后存储其结果？
      */
     public boolean getShouldStoreResult() {
         return false;

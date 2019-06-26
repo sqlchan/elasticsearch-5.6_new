@@ -24,6 +24,7 @@ import org.elasticsearch.transport.TransportRequestOptions;
 
 /**
  * A generic action. Should strive to make it a singleton.
+ * 一般的动作。应该努力让它成为单身汉。
  */
 public abstract class GenericAction<Request extends ActionRequest, Response extends ActionResponse> {
 
@@ -31,6 +32,7 @@ public abstract class GenericAction<Request extends ActionRequest, Response exte
 
     /**
      * @param name The name of the action, must be unique across actions.
+     *             操作的名称在各个操作中必须是唯一的。
      */
     protected GenericAction(String name) {
         this.name = name;

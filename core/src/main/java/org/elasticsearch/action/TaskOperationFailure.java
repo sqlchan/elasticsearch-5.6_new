@@ -33,7 +33,7 @@ import java.io.IOException;
 import static org.elasticsearch.ExceptionsHelper.detailedMessage;
 
 /**
- * Information about task operation failures
+ * Information about task operation failures    有关任务操作失败的信息
  *
  * The class is final due to serialization limitations
  */

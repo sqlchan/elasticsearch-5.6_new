@@ -325,6 +325,7 @@ import static java.util.Collections.unmodifiableMap;
 
 /**
  * Builds and binds the generic action map, all {@link TransportAction}s, and {@link ActionFilters}.
+ * 建立通用的动作和卷的地图，所有的链接transportaction“{ }，{和} actionfilters”链接。
  */
 public class ActionModule extends AbstractModule {
 
@@ -383,7 +384,7 @@ public class ActionModule extends AbstractModule {
     }
 
     static Map<String, ActionHandler<?, ?>> setupActions(List<ActionPlugin> actionPlugins) {
-        // Subclass NamedRegistry for easy registration
+        // Subclass NamedRegistry for easy registration 子类名称注册表便于注册
         class ActionRegistry extends NamedRegistry<ActionHandler<?, ?>> {
             ActionRegistry() {
                 super("action");

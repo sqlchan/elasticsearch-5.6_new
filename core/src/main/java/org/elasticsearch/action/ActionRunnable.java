@@ -24,6 +24,7 @@ import org.elasticsearch.common.util.concurrent.AbstractRunnable;
 /**
  * Base class for {@link Runnable}s that need to call {@link ActionListener#onFailure(Exception)} in case an uncaught
  * exception or error is thrown while the actual action is run.
+ * 需要调用@link actionlistener onfailure（exception）的@link runnable的基类，以防在实际操作运行时引发未捕获的异常或错误。
  */
 public abstract class ActionRunnable<Response> extends AbstractRunnable {
 
@@ -35,7 +36,9 @@ public abstract class ActionRunnable<Response> extends AbstractRunnable {
 
     /**
      * Calls the action listeners {@link ActionListener#onFailure(Exception)} method with the given exception.
+     * 使用给定的异常调用action listener@link actionlistener onfailure（exception）方法。
      * This method is invoked for all exception thrown by {@link #doRun()}
+     * 对于由@link dorun（）引发的所有异常调用此方法。
      */
     @Override
     public void onFailure(Exception e) {

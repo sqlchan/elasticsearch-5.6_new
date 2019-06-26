@@ -43,6 +43,7 @@ public enum ThreadingModel {
      * <tt>true</tt> if the actual operation the action represents will be executed
      * on a different thread than the calling thread (assuming it will be executed
      * on the same node).
+     * 如果操作所代表的实际操作将在与调用线程不同的线程上执行（假设它将在同一节点上执行）。
      */
     public boolean threadedOperation() {
         return this == OPERATION || this == OPERATION_LISTENER;
@@ -52,6 +53,7 @@ public enum ThreadingModel {
      * <tt>true</tt> if the invocation of the action result listener will be executed
      * on a different thread (than the calling thread or an "expensive" thread, like the
      * IO thread).
+     * 如果动作结果侦听器的调用将在不同的线程（而不是调用线程或“昂贵”线程，如IO线程）上执行。
      */
     public boolean threadedListener() {
         return this == LISTENER || this == OPERATION_LISTENER;

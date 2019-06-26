@@ -25,6 +25,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * A listener that ensures that only one of onResponse or onFailure is called. And the method
  * the is called is only called once. Subclasses should implement notification logic with
  * innerOnResponse and innerOnFailure.
+ * 确保只调用OnResponse或OnFailure中的一个的侦听器。
+ * 调用的方法只调用一次。子类应该使用InnerOnResponse和InnerOnFailure实现通知逻辑。
  */
 public abstract class NotifyOnceListener<Response> implements ActionListener<Response> {
 
