@@ -29,6 +29,7 @@ import java.io.IOException;
 
 /**
  * Transport level private response for the transport handler registered under
+ * 在下注册的传输处理程序的传输级别专用响应
  * {@value org.elasticsearch.action.admin.cluster.node.liveness.TransportLivenessAction#NAME}
  */
 public final class LivenessResponse extends ActionResponse {

@@ -64,12 +64,14 @@ public class TransportClusterHealthAction extends TransportMasterNodeReadAction<
     @Override
     protected String executor() {
         // this should be executing quickly no need to fork off
+        // 这应该很快执行，不需要分叉
         return ThreadPool.Names.SAME;
     }
 
     @Override
     protected ClusterBlockException checkBlock(ClusterHealthRequest request, ClusterState state) {
         return null; // we want users to be able to call this even when there are global blocks, just to check the health (are there blocks?)
+        // 我们希望用户能够在存在全局块的情况下调用它，只需检查运行状况（是否存在块？）
     }
 
     @Override
@@ -211,6 +213,9 @@ public class TransportClusterHealthAction extends TransportMasterNodeReadAction<
         // if the state is sufficient for what we where waiting for we don't need to mark this as timedOut.
         // We spend too much time in waiting for events such that we might already reached a valid state.
         // this should not mark the request as timed out
+        // 我们在这里检查超时，因为此方法可能是从等待事件响应处理程序调用的，该处理程序可能已经超时。
+        // 如果状态足以满足我们所等待的，我们就不需要将其标记为时间。
+        // 我们在等待事件上花费了太多时间，以至于我们可能已经达到了一个有效的状态。这不应将请求标记为超时
         response.setTimedOut(timedOut && valid == false);
         return response;
     }
@@ -231,9 +236,11 @@ public class TransportClusterHealthAction extends TransportMasterNodeReadAction<
                     && response.getUnassignedShards() == 0
                     && response.getInitializingShards() == 0) {
                 // if we are waiting for all shards to be active, then the num of unassigned and num of initializing shards must be 0
+                // 如果我们正在等待所有碎片处于活动状态，则未分配的碎片数和初始化碎片数必须为0
                 waitForCounter++;
             } else if (waitForActiveShards.enoughShardsActive(response.getActiveShards())) {
                 // there are enough active shards to meet the requirements of the request
+                // 有足够的活动碎片来满足请求的要求
                 waitForCounter++;
             }
         }
@@ -242,8 +249,8 @@ public class TransportClusterHealthAction extends TransportMasterNodeReadAction<
                 indexNameExpressionResolver.concreteIndexNames(clusterState, IndicesOptions.strictExpand(), request.indices());
                 waitForCounter++;
             } catch (IndexNotFoundException e) {
-                response.setStatus(ClusterHealthStatus.RED); // no indices, make sure its RED
-                // missing indices, wait a bit more...
+                response.setStatus(ClusterHealthStatus.RED); // no indices, make sure its RED   没有索引，确保它是红色的
+                // missing indices, wait a bit more...缺少索引，请稍等…
             }
         }
         if (!request.waitForNodes().isEmpty()) {
@@ -309,6 +316,7 @@ public class TransportClusterHealthAction extends TransportMasterNodeReadAction<
             concreteIndices = indexNameExpressionResolver.concreteIndexNames(clusterState, request);
         } catch (IndexNotFoundException e) {
             // one of the specified indices is not there - treat it as RED.
+            // 其中一个指定的索引不存在-将其视为红色。
             ClusterHealthResponse response = new ClusterHealthResponse(clusterState.getClusterName().value(), Strings.EMPTY_ARRAY, clusterState,
                     numberOfPendingTasks, numberOfInFlightFetch, UnassignedInfo.getNumberOfDelayedUnassigned(clusterState),
                     pendingTaskTimeInQueue);

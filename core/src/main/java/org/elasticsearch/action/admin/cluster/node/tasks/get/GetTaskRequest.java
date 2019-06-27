@@ -32,6 +32,7 @@ import static org.elasticsearch.action.ValidateActions.addValidationError;
 
 /**
  * A request to get node tasks
+ * 获取节点任务的请求
  */
 public class GetTaskRequest extends ActionRequest {
     private TaskId taskId = TaskId.EMPTY_TASK_ID;

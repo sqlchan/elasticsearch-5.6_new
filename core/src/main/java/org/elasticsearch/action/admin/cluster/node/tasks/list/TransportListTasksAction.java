@@ -84,6 +84,7 @@ public class TransportListTasksAction extends TransportTasksAction<Task, ListTas
             operation = operation.andThen(task -> {
                 if (task.getAction().startsWith(ListTasksAction.NAME)) {
                     // It doesn't make sense to wait for List Tasks and it can cause an infinite loop of the task waiting
+                    // 等待列表任务是没有意义的，它可能导致无限循环的任务等待自身或其子任务之一。
                     // for itself or one of its child tasks
                     return;
                 }

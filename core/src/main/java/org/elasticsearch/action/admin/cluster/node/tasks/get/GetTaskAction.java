@@ -24,6 +24,7 @@ import org.elasticsearch.client.ElasticsearchClient;
 
 /**
  * Action for retrieving a list of currently running tasks
+ * 检索当前运行任务列表的操作
  */
 public class GetTaskAction extends Action<GetTaskRequest, GetTaskResponse, GetTaskRequestBuilder> {
 

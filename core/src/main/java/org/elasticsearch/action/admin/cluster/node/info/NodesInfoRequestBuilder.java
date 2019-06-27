@@ -33,6 +33,7 @@ public class NodesInfoRequestBuilder extends NodesOperationRequestBuilder<NodesI
 
     /**
      * Clears all info flags.
+     * 清除所有信息标志。
      */
     public NodesInfoRequestBuilder clear() {
         request.clear();
@@ -41,6 +42,7 @@ public class NodesInfoRequestBuilder extends NodesOperationRequestBuilder<NodesI
 
     /**
      * Sets to return all the data.
+     * 设置以返回所有数据。
      */
     public NodesInfoRequestBuilder all() {
         request.all();
@@ -48,7 +50,7 @@ public class NodesInfoRequestBuilder extends NodesOperationRequestBuilder<NodesI
     }
 
     /**
-     * Should the node settings be returned.
+     * Should the node settings be returned.    是否应返回节点设置。
      */
     public NodesInfoRequestBuilder setSettings(boolean settings) {
         request.settings(settings);

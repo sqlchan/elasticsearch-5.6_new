@@ -28,7 +28,7 @@ import org.elasticsearch.tasks.Task;
 import java.io.IOException;
 
 /**
- * A request to cancel tasks
+ * A request to cancel tasks取消任务的请求
  */
 public class CancelTasksRequest extends BaseTasksRequest<CancelTasksRequest> {
 
@@ -54,7 +54,7 @@ public class CancelTasksRequest extends BaseTasksRequest<CancelTasksRequest> {
     }
 
     /**
-     * Set the reason for canceling the task.
+     * Set the reason for canceling the task.   设置取消任务的原因。
      */
     public CancelTasksRequest setReason(String reason) {
         this.reason = reason;

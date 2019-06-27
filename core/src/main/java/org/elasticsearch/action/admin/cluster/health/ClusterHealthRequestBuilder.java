@@ -70,6 +70,9 @@ public class ClusterHealthRequestBuilder extends MasterNodeReadOperationRequestB
      * retrieving the cluster health status.  Defaults to <code>false</code>, meaning the
      * operation does not wait on there being no more relocating shards.  Set to <code>true</code>
      * to wait until the number of relocating shards in the cluster is 0.
+     * 设置请求在检索群集运行状况状态之前是否应等待没有重新定位碎片。
+     * 默认值为<code>false，这意味着操作不会在没有更多重新定位碎片的情况下等待。
+     * 设置为<code>true<code>等待群集中重新定位碎片的数量为0。
      */
     public ClusterHealthRequestBuilder setWaitForNoRelocatingShards(boolean waitForRelocatingShards) {
         request.waitForNoRelocatingShards(waitForRelocatingShards);

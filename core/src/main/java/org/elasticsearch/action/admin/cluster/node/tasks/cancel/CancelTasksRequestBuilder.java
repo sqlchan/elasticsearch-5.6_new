@@ -24,6 +24,7 @@ import org.elasticsearch.client.ElasticsearchClient;
 
 /**
  * Builder for the request to cancel tasks running on the specified nodes
+ * 请求取消在指定节点上运行的任务的生成器
  */
 public class CancelTasksRequestBuilder extends TasksRequestBuilder<CancelTasksRequest, CancelTasksResponse, CancelTasksRequestBuilder> {
 

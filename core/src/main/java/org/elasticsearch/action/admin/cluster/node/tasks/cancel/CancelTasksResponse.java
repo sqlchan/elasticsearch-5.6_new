@@ -28,6 +28,7 @@ import java.util.List;
 
 /**
  * Returns the list of tasks that were cancelled
+ * 返回已取消的任务列表
  */
 public class CancelTasksResponse extends ListTasksResponse {
 

@@ -49,7 +49,7 @@ public class ClusterHealthResponse extends ActionResponse implements StatusToXCo
     ClusterHealthResponse() {
     }
 
-    /** needed for plugins BWC */
+    /** needed for plugins BWC 需要用于插件BWC*/
     public ClusterHealthResponse(String clusterName, String[] concreteIndices, ClusterState clusterState) {
         this(clusterName, concreteIndices, clusterState, -1, -1, -1, TimeValue.timeValueHours(0));
     }
@@ -117,6 +117,7 @@ public class ClusterHealthResponse extends ActionResponse implements StatusToXCo
      * The number of unassigned shards that are currently being delayed (for example,
      * due to node leaving the cluster and waiting for a timeout for the node to come
      * back in order to allocate the shards back to it).
+     * 当前被延迟的未分配碎片的数量（例如，由于节点离开集群并等待节点返回超时以将碎片分配回集群）。
      */
     public int getDelayedUnassignedShards() {
         return this.delayedUnassignedShards;
@@ -139,8 +140,9 @@ public class ClusterHealthResponse extends ActionResponse implements StatusToXCo
 
     /**
      * Allows to explicitly override the derived cluster health status.
+     * 允许显式重写派生群集运行状况状态。
      *
-     * @param status The override status. Must not be null.
+     * @param status The override status. Must not be null. 覆盖状态。不能为空。
      */
     public void setStatus(ClusterHealthStatus status) {
         if (status == null) {
@@ -155,7 +157,7 @@ public class ClusterHealthResponse extends ActionResponse implements StatusToXCo
 
     /**
      *
-     * @return The maximum wait time of all tasks in the queue
+     * @return The maximum wait time of all tasks in the queue  队列中所有任务的最大等待时间
      */
     public TimeValue getTaskMaxWaitingTime() {
         return taskMaxWaitingTime;
@@ -163,6 +165,7 @@ public class ClusterHealthResponse extends ActionResponse implements StatusToXCo
 
     /**
      * The percentage of active shards, should be 100% in a green system
+     * 在绿色系统中，活动碎片的百分比应为100%。
      */
     public double getActiveShardsPercent() {
         return clusterStateHealth.getActiveShardsPercent();

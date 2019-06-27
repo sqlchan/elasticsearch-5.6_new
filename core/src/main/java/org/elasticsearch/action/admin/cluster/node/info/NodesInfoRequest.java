@@ -26,7 +26,7 @@ import org.elasticsearch.common.io.stream.StreamOutput;
 import java.io.IOException;
 
 /**
- * A request to get node (cluster) level information.
+ * A request to get node (cluster) level information. 获取节点（群集）级别信息的请求。
  */
 public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
 
@@ -47,13 +47,14 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
     /**
      * Get information from nodes based on the nodes ids specified. If none are passed, information
      * for all nodes will be returned.
+     * 根据指定的节点ID从节点获取信息。如果未传递任何节点，将返回所有节点的信息。
      */
     public NodesInfoRequest(String... nodesIds) {
         super(nodesIds);
     }
 
     /**
-     * Clears all info flags.
+     * Clears all info flags.清除所有信息标志。
      */
     public NodesInfoRequest clear() {
         settings = false;
@@ -70,7 +71,7 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
     }
 
     /**
-     * Sets to return all the data.
+     * Sets to return all the data. 设置以返回所有数据。
      */
     public NodesInfoRequest all() {
         settings = true;
@@ -87,14 +88,14 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
     }
 
     /**
-     * Should the node settings be returned.
+     * Should the node settings be returned.    是否应返回节点设置。
      */
     public boolean settings() {
         return this.settings;
     }
 
     /**
-     * Should the node settings be returned.
+     * Should the node settings be returned.    是否应返回节点设置。
      */
     public NodesInfoRequest settings(boolean settings) {
         this.settings = settings;
@@ -102,14 +103,14 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
     }
 
     /**
-     * Should the node OS be returned.
+     * Should the node OS be returned.  是否应返回节点操作系统。
      */
     public boolean os() {
         return this.os;
     }
 
     /**
-     * Should the node OS be returned.
+     * Should the node OS be returned.  是否应返回节点操作系统。
      */
     public NodesInfoRequest os(boolean os) {
         this.os = os;
@@ -117,7 +118,7 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
     }
 
     /**
-     * Should the node Process be returned.
+     * Should the node Process be returned. 是否应返回节点进程。
      */
     public boolean process() {
         return this.process;
@@ -132,7 +133,7 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
     }
 
     /**
-     * Should the node JVM be returned.
+     * Should the node JVM be returned. 是否应返回节点JVM。
      */
     public boolean jvm() {
         return this.jvm;
@@ -218,7 +219,7 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
     }
 
     /**
-     * @return true if information about ingest is requested
+     * @return true if information about ingest is requested    如果请求有关摄取的信息，则为true
      */
     public boolean ingest() {
         return ingest;
@@ -226,6 +227,7 @@ public class NodesInfoRequest extends BaseNodesRequest<NodesInfoRequest> {
 
     /**
      * Should information about indices (currently just indexing buffers) be returned
+     * 是否应返回有关索引（当前只是索引缓冲区）的信息
      * @param indices true if you want info
      */
     public NodesInfoRequest indices(boolean indices) {

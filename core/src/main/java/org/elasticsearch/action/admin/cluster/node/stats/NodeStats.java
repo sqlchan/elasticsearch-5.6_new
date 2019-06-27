@@ -44,6 +44,7 @@ import java.util.Map;
 
 /**
  * Node statistics (dynamic, changes depending on when created).
+ * 节点统计信息（动态，更改取决于创建时间）。
  */
 public class NodeStats extends BaseNodeResponse implements ToXContent {
 

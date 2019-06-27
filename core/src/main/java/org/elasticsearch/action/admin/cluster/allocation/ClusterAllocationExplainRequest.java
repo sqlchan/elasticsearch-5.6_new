@@ -35,6 +35,7 @@ import static org.elasticsearch.action.ValidateActions.addValidationError;
 
 /**
  * A request to explain the allocation of a shard in the cluster
+ * 解释集群中碎片分配的请求
  */
 public class ClusterAllocationExplainRequest extends MasterNodeRequest<ClusterAllocationExplainRequest> {
 

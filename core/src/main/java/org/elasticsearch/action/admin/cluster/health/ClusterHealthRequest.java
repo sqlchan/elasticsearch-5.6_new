@@ -112,6 +112,9 @@ public class ClusterHealthRequest extends MasterNodeReadRequest<ClusterHealthReq
      * retrieving the cluster health status.  Defaults to {@code false}, meaning the
      * operation does not wait on there being no more relocating shards.  Set to <code>true</code>
      * to wait until the number of relocating shards in the cluster is 0.
+     * 设置请求在检索群集运行状况状态之前是否应等待没有重新定位碎片。
+     * 默认为@code false，这意味着该操作不会等待没有更多的碎片重新定位。
+     * 设置为<code>true<code>等待群集中重新定位碎片的数量为0。
      */
     public ClusterHealthRequest waitForNoRelocatingShards(boolean waitForNoRelocatingShards) {
         this.waitForNoRelocatingShards = waitForNoRelocatingShards;
@@ -129,6 +132,10 @@ public class ClusterHealthRequest extends MasterNodeReadRequest<ClusterHealthReq
      * all replicas) to be active across all indices in the cluster. Otherwise, use
      * {@link ActiveShardCount#from(int)} to set this value to any non-negative integer, up to the
      * total number of shard copies to wait for.
+     * 设置在获取运行状况状态之前必须在所有索引中处于活动状态的碎片副本数。
+     * 默认为@link activeshardcount none，这意味着我们不等待任何活动碎片。
+     * 将该值设置为@link activeshardcount all，以等待集群中所有索引上的所有碎片（主要和所有副本）都处于活动状态。
+     * 否则，使用@link activeshardcount from（int）将该值设置为任何非负整数，直至等待的碎片拷贝总数。
      */
     public ClusterHealthRequest waitForActiveShards(ActiveShardCount waitForActiveShards) {
         if (waitForActiveShards.equals(ActiveShardCount.DEFAULT)) {
@@ -144,6 +151,8 @@ public class ClusterHealthRequest extends MasterNodeReadRequest<ClusterHealthReq
      * A shortcut for {@link #waitForActiveShards(ActiveShardCount)} where the numerical
      * shard count is passed in, instead of having to first call {@link ActiveShardCount#from(int)}
      * to get the ActiveShardCount.
+     * 用于@link waitForActiveShards（ActiveShardCount）的快捷方式，其中传入数字碎片计数，
+     * 而不必首先调用@link ActiveShardCount From（int）来获取ActiveShardCount。
      */
     public ClusterHealthRequest waitForActiveShards(final int waitForActiveShards) {
         return waitForActiveShards(ActiveShardCount.from(waitForActiveShards));
@@ -155,6 +164,7 @@ public class ClusterHealthRequest extends MasterNodeReadRequest<ClusterHealthReq
 
     /**
      * Waits for N number of nodes. Use "12" for exact mapping, "&gt;12" and "&lt;12" for range.
+     * 等待n个节点。精确映射使用“12”，范围使用“&amp;gt；12”和“&amp;lt；12”。
      */
     public ClusterHealthRequest waitForNodes(String waitForNodes) {
         this.waitForNodes = waitForNodes;

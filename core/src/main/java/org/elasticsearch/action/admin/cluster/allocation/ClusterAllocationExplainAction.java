@@ -24,6 +24,7 @@ import org.elasticsearch.client.ElasticsearchClient;
 
 /**
  * Action for explaining shard allocation for a shard in the cluster
+ * 解释群集中碎片分配的操作
  */
 public class ClusterAllocationExplainAction extends Action<ClusterAllocationExplainRequest,
                                                                ClusterAllocationExplainResponse,

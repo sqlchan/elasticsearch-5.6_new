@@ -45,6 +45,7 @@ public class NodesHotThreadsRequest extends BaseNodesRequest<NodesHotThreadsRequ
     /**
      * Get hot threads from nodes based on the nodes ids specified. If none are passed, hot
      * threads for all nodes is used.
+     * 根据指定的节点ID从节点获取热线程。如果没有传递，则使用所有节点的热线程。
      */
     public NodesHotThreadsRequest(String... nodesIds) {
         super(nodesIds);

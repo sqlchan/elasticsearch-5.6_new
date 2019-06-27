@@ -33,7 +33,7 @@ public class NodesStatsRequestBuilder extends NodesOperationRequestBuilder<Nodes
     }
 
     /**
-     * Sets all the request flags.
+     * Sets all the request flags.  设置所有请求标志。
      */
     public NodesStatsRequestBuilder all() {
         request.all();
@@ -41,7 +41,7 @@ public class NodesStatsRequestBuilder extends NodesOperationRequestBuilder<Nodes
     }
 
     /**
-     * Clears all stats flags.
+     * Clears all stats flags.  清除所有统计标志
      */
     public NodesStatsRequestBuilder clear() {
         request.clear();
@@ -49,7 +49,7 @@ public class NodesStatsRequestBuilder extends NodesOperationRequestBuilder<Nodes
     }
 
     /**
-     * Should the node indices stats be returned.
+     * Should the node indices stats be returned.   是否应返回节点索引状态。
      */
     public NodesStatsRequestBuilder setIndices(boolean indices) {
         request.indices(indices);
@@ -67,7 +67,7 @@ public class NodesStatsRequestBuilder extends NodesOperationRequestBuilder<Nodes
     }
 
     /**
-     * Should the node indices stats be returned.
+     * Should the node indices stats be returned.   是否应返回节点索引状态。
      */
     public NodesStatsRequestBuilder setIndices(CommonStatsFlags indices) {
         request.indices(indices);
@@ -75,7 +75,7 @@ public class NodesStatsRequestBuilder extends NodesOperationRequestBuilder<Nodes
     }
 
     /**
-     * Should the node OS stats be returned.
+     * Should the node OS stats be returned.    是否应返回节点OS状态。
      */
     public NodesStatsRequestBuilder setOs(boolean os) {
         request.os(os);

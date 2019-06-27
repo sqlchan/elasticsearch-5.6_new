@@ -28,6 +28,7 @@ import java.io.IOException;
 
 /**
  * A request to get node (cluster) level stats.
+ * 获取节点（集群）级统计信息的请求。
  */
 public class NodesStatsRequest extends BaseNodesRequest<NodesStatsRequest> {
 
@@ -50,13 +51,14 @@ public class NodesStatsRequest extends BaseNodesRequest<NodesStatsRequest> {
     /**
      * Get stats from nodes based on the nodes ids specified. If none are passed, stats
      * for all nodes will be returned.
+     * 根据指定的节点ID从节点获取统计信息。如果未传递任何节点，将返回所有节点的统计信息。
      */
     public NodesStatsRequest(String... nodesIds) {
         super(nodesIds);
     }
 
     /**
-     * Sets all the request flags.
+     * Sets all the request flags.设置所有请求标志。
      */
     public NodesStatsRequest all() {
         this.indices.all();
@@ -103,7 +105,7 @@ public class NodesStatsRequest extends BaseNodesRequest<NodesStatsRequest> {
     }
 
     /**
-     * Should indices stats be returned.
+     * Should indices stats be returned. 是否应返回索引状态。
      */
     public NodesStatsRequest indices(boolean indices) {
         if (indices) {

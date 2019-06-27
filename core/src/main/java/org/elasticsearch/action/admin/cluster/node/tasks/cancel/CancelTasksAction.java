@@ -23,7 +23,7 @@ import org.elasticsearch.action.Action;
 import org.elasticsearch.client.ElasticsearchClient;
 
 /**
- * Action for cancelling running tasks
+ * Action for cancelling running tasks 取消正在运行的任务的操作
  */
 public class CancelTasksAction extends Action<CancelTasksRequest, CancelTasksResponse, CancelTasksRequestBuilder> {
 

@@ -27,6 +27,7 @@ import java.io.IOException;
 
 /**
  * Explanation response for a shard in the cluster
+ * 集群中碎片的解释响应
  */
 public class ClusterAllocationExplainResponse extends ActionResponse {
 
@@ -41,6 +42,7 @@ public class ClusterAllocationExplainResponse extends ActionResponse {
 
     /**
      * Return the explanation for shard allocation in the cluster
+     * 返回集群中碎片分配的解释
      */
     public ClusterAllocationExplanation getExplanation() {
         return this.cae;

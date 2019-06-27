@@ -18,6 +18,6 @@
  */
 
 /**
- * Administrative Actions.
+ * Administrative Actions.  行政行为
  */
 package org.elasticsearch.action.admin;

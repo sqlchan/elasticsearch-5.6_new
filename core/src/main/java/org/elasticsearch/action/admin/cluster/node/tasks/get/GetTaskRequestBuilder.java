@@ -26,6 +26,7 @@ import org.elasticsearch.tasks.TaskId;
 
 /**
  * Builder for the request to retrieve the list of tasks running on the specified nodes
+ * 用于检索在指定节点上运行的任务列表的请求的生成器
  */
 public class GetTaskRequestBuilder extends ActionRequestBuilder<GetTaskRequest, GetTaskResponse, GetTaskRequestBuilder> {
     public GetTaskRequestBuilder(ElasticsearchClient client, GetTaskAction action) {

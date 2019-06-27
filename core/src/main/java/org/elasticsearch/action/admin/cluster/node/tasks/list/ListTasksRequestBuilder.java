@@ -24,6 +24,7 @@ import org.elasticsearch.client.ElasticsearchClient;
 
 /**
  * Builder for the request to retrieve the list of tasks running on the specified nodes
+ * 、用于检索在指定节点上运行的任务列表的请求的生成器
  */
 public class ListTasksRequestBuilder extends TasksRequestBuilder<ListTasksRequest, ListTasksResponse, ListTasksRequestBuilder> {
 
@@ -33,6 +34,7 @@ public class ListTasksRequestBuilder extends TasksRequestBuilder<ListTasksReques
 
     /**
      * Should detailed task information be returned.
+     * 是否应返回详细的任务信息。
      */
     public ListTasksRequestBuilder setDetailed(boolean detailed) {
         request.setDetailed(detailed);

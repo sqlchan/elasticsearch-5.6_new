@@ -55,12 +55,13 @@ import static org.elasticsearch.action.admin.cluster.node.tasks.list.TransportLi
 
 /**
  * Action to get a single task. If the task isn't running then it'll try to request the status from request index.
- *
+ *获取单个任务的操作。如果任务没有运行，它将尝试从请求索引请求状态。
  * The general flow is:
  * <ul>
  * <li>If this isn't being executed on the node to which the requested TaskId belongs then move to that node.
- * <li>Look up the task and return it if it exists
- * <li>If it doesn't then look up the task from the results index
+ * 如果未在请求的taskid所属的节点上执行此操作，请移动到该节点。
+ * <li>Look up the task and return it if it exists   查找任务并返回它（如果存在）
+ * <li>If it doesn't then look up the task from the results index  如果没有，则从结果索引中查找任务
  * </ul>
  */
 public class TransportGetTaskAction extends HandledTransportAction<GetTaskRequest, GetTaskResponse> {
@@ -96,7 +97,8 @@ public class TransportGetTaskAction extends HandledTransportAction<GetTaskReques
 
     /**
      * Executed on the coordinating node to forward execution of the remaining work to the node that matches that requested
-     * {@link TaskId#getNodeId()}. If the node isn't in the cluster then this will just proceed to
+     * 在协调节点上执行，以将剩余工作的执行转发到与请求匹配的节点
+     * {@link TaskId#getNodeId()}. If the node isn't in the cluster then this will just proceed to 如果节点不在群集中，那么这将继续
      * {@link #getFinishedTaskFromIndex(Task, GetTaskRequest, ActionListener)} on this node.
      */
     private void runOnNodeWithTaskIfPossible(Task thisTask, GetTaskRequest request, ActionListener<GetTaskResponse> listener) {
@@ -108,6 +110,7 @@ public class TransportGetTaskAction extends HandledTransportAction<GetTaskReques
         DiscoveryNode node = clusterService.state().nodes().get(request.getTaskId().getNodeId());
         if (node == null) {
             // Node is no longer part of the cluster! Try and look the task up from the results index.
+            // 节点不再是集群的一部分！尝试从结果索引中查找任务。
             getFinishedTaskFromIndex(thisTask, request, ActionListener.wrap(listener::onResponse, e -> {
                 if (e instanceof ResourceNotFoundException) {
                     e = new ResourceNotFoundException(
@@ -146,6 +149,7 @@ public class TransportGetTaskAction extends HandledTransportAction<GetTaskReques
 
     /**
      * Executed on the node that should be running the task to find and return the running task. Falls back to
+     * 在应该运行任务的节点上执行，以查找并返回正在运行的任务。回到
      * {@link #getFinishedTaskFromIndex(Task, GetTaskRequest, ActionListener)} if the task isn't still running.
      */
     void getRunningTaskFromNode(Task thisTask, GetTaskRequest request, ActionListener<GetTaskResponse> listener) {

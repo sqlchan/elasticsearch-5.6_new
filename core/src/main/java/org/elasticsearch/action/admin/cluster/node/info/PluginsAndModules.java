@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Information about plugins and modules
+ * Information about plugins and modules    有关插件和模块的信息
  */
 public class PluginsAndModules implements Writeable, ToXContent {
     private final List<PluginInfo> plugins;

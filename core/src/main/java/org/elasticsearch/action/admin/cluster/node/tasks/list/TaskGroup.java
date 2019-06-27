@@ -31,6 +31,7 @@ import java.util.stream.Collectors;
 
 /**
  * Information about a currently running task and all its subtasks.
+ * 有关当前正在运行的任务及其所有子任务的信息
  */
 public class TaskGroup implements ToXContent {
 

@@ -43,6 +43,8 @@ import static org.elasticsearch.cluster.routing.allocation.AbstractAllocationDec
  * A {@code ClusterAllocationExplanation} is an explanation of why a shard is unassigned,
  * or if it is not unassigned, then which nodes it could possibly be relocated to.
  * It is an immutable class.
+ * @code clusterallocationexplanation是对碎片未分配的原因的解释，
+ * 或者如果碎片未未未分配，那么可以将其重新定位到哪些节点。它是一个不变的类。
  */
 public final class ClusterAllocationExplanation implements ToXContent, Writeable {
 
@@ -81,6 +83,7 @@ public final class ClusterAllocationExplanation implements ToXContent, Writeable
 
     /**
      * Returns the shard that the explanation is about.
+     * 返回解释所涉及的碎片。
      */
     public ShardId getShard() {
         return shardRouting.shardId();
@@ -88,6 +91,7 @@ public final class ClusterAllocationExplanation implements ToXContent, Writeable
 
     /**
      * Returns {@code true} if the explained shard is primary, {@code false} otherwise.
+     * 返回@code true如果解释的碎片是主碎片，@code false否则返回。
      */
     public boolean isPrimary() {
         return shardRouting.primary();
@@ -95,6 +99,7 @@ public final class ClusterAllocationExplanation implements ToXContent, Writeable
 
     /**
      * Returns the current {@link ShardRoutingState} of the shard.
+     * 返回碎片的当前@link shardroutingstate。
      */
     public ShardRoutingState getShardState() {
         return shardRouting.state();
@@ -102,6 +107,7 @@ public final class ClusterAllocationExplanation implements ToXContent, Writeable
 
     /**
      * Returns the currently assigned node, or {@code null} if the shard is unassigned.
+     * 返回当前分配的节点，如果未分配碎片，则返回@code null。
      */
     @Nullable
     public DiscoveryNode getCurrentNode() {
@@ -118,6 +124,7 @@ public final class ClusterAllocationExplanation implements ToXContent, Writeable
 
     /**
      * Returns the unassigned info for the shard, or {@code null} if the shard is active.
+     * 返回碎片的未分配信息，如果碎片处于活动状态，则返回@code null。
      */
     @Nullable
     public UnassignedInfo getUnassignedInfo() {
@@ -126,6 +133,7 @@ public final class ClusterAllocationExplanation implements ToXContent, Writeable
 
     /**
      * Returns the cluster disk info for the cluster, or {@code null} if none available.
+     * 返回群集的群集磁盘信息，或者@code NULL（如果没有可用的话）。
      */
     @Nullable
     public ClusterInfo getClusterInfo() {
@@ -134,6 +142,7 @@ public final class ClusterAllocationExplanation implements ToXContent, Writeable
 
     /** \
      * Returns the shard allocation decision for attempting to assign or move the shard.
+     * 返回尝试分配或移动碎片的碎片分配决定。
      */
     public ShardAllocationDecision getShardAllocationDecision() {
         return shardAllocationDecision;

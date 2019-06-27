@@ -54,8 +54,10 @@ import java.util.function.Consumer;
 
 /**
  * Transport action that can be used to cancel currently running cancellable tasks.
+ * 可用于取消当前正在运行的可取消任务的传输操作。
  * <p>
  * For a task to be cancellable it has to return an instance of
+ * 要取消任务，它必须返回
  * {@link CancellableTask} from {@link TransportRequest#createTask(long, String, String, TaskId)}
  */
 public class TransportCancelTasksAction extends TransportTasksAction<CancellableTask, CancelTasksRequest, CancelTasksResponse, TaskInfo> {

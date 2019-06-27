@@ -39,7 +39,7 @@ import org.elasticsearch.transport.TransportInfo;
 import java.io.IOException;
 
 /**
- * Node information (static, does not change over time).
+ * Node information (static, does not change over time).节点信息（静态，不随时间变化）。
  */
 public class NodeInfo extends BaseNodeResponse {
 
