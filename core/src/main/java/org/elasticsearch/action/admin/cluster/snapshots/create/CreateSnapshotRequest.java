@@ -49,14 +49,16 @@ import static org.elasticsearch.common.xcontent.support.XContentMapValues.nodeBo
  * Create snapshot request
  * <p>
  * The only mandatory parameter is repository name. The repository name has to satisfy the following requirements
+ * 惟一必需的参数是存储库名称。存储库名称必须满足以下要求
  * <ul>
  * <li>be a non-empty string</li>
  * <li>must not contain whitespace (tabs or spaces)</li>
  * <li>must not contain comma (',')</li>
  * <li>must not contain hash sign ('#')</li>
  * <li>must not start with underscore ('-')</li>
- * <li>must be lowercase</li>
+ * <li>must be lowercase</li>  必须是小写的
  * <li>must not contain invalid file name characters {@link org.elasticsearch.common.Strings#INVALID_FILENAME_CHARS} </li>
+ * 必须不包含无效的文件名字符
  * </ul>
  */
 public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotRequest> implements IndicesRequest.Replaceable {
@@ -82,6 +84,7 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * Constructs a new put repository request with the provided snapshot and repository names
+     * 使用提供的快照和存储库名称构造新的put存储库请求
      *
      * @param repository repository name
      * @param snapshot   snapshot name
@@ -160,10 +163,13 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * Sets a list of indices that should be included into the snapshot
+     * 设置快照中应该包含的索引列表
      * <p>
      * The list of indices supports multi-index syntax. For example: "+test*" ,"-test42" will index all indices with
      * prefix "test" except index "test42". Aliases are supported. An empty list or {"_all"} will snapshot all open
      * indices in the cluster.
+     * 索引列表支持多索引语法。例如:“+test*”、“-test42”将索引除索引“test42”外的所有前缀为“test”的索引。
+     * 支持别名。空列表或{"_all"}将快照集群中所有打开的索引。
      *
      * @return this request
      */
@@ -175,10 +181,13 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * Sets a list of indices that should be included into the snapshot
+     * 设置快照中应该包含的索引列表
      * <p>
      * The list of indices supports multi-index syntax. For example: "+test*" ,"-test42" will index all indices with
      * prefix "test" except index "test42". Aliases are supported. An empty list or {"_all"} will snapshot all open
      * indices in the cluster.
+     * 索引列表支持多索引语法。例如:“+test*”、“-test42”将索引除索引“test42”外的所有前缀为“test”的索引。
+     * 支持别名。空列表或{"_all"}将快照集群中所有打开的索引。
      *
      * @return this request
      */
@@ -199,6 +208,7 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * Specifies the indices options. Like what type of requested indices to ignore. For example indices that don't exist.
+     * 指定索引选项。比如需要忽略什么类型的索引。例如不存在的索引。
      *
      * @return the desired behaviour regarding indices options
      */
@@ -221,6 +231,7 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * Returns true if indices with unavailable shards should be be partially snapshotted.
+     * 如果应该部分快照具有不可用碎片的索引，则返回true。
      *
      * @return the desired behaviour regarding indices options
      */
@@ -241,9 +252,11 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * If set to true the operation should wait for the snapshot completion before returning.
+     * 如果设置为true，则操作应在返回前等待快照完成。
      *
      * By default, the operation will return as soon as snapshot is initialized. It can be changed by setting this
      * flag to true.
+     * 默认情况下，快照初始化后，操作将立即返回。可以通过将此标志设置为true来更改它。
      *
      * @param waitForCompletion true if operation should wait for the snapshot completion
      * @return this request
@@ -255,6 +268,7 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * Returns true if the request should wait for the snapshot completion before returning
+     * 如果请求在返回前应等待快照完成，则返回true
      *
      * @return true if the request should wait for completion
      */
@@ -263,9 +277,9 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
     }
 
     /**
-     * Sets repository-specific snapshot settings.
+     * Sets repository-specific snapshot settings.  设置特定于存储库的快照设置。
      * <p>
-     * See repository documentation for more information.
+     * See repository documentation for more information.   有关更多信息，请参见存储库文档。
      *
      * @param settings repository-specific snapshot settings
      * @return this request
@@ -347,6 +361,7 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
 
     /**
      * Set to true if global state should be stored as part of the snapshot
+     * 如果全局状态应该作为快照的一部分存储，则将其设置为true
      *
      * @param includeGlobalState true if global state should be stored
      * @return this request
@@ -366,7 +381,7 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
     }
 
     /**
-     * Parses snapshot definition.
+     * Parses snapshot definition.  解析快照的定义。
      *
      * @param source snapshot definition
      * @return this request
@@ -380,6 +395,7 @@ public class CreateSnapshotRequest extends MasterNodeRequest<CreateSnapshotReque
                 } else if (entry.getValue() instanceof ArrayList) {
                     indices((ArrayList<String>) entry.getValue());
                 } else {
+                    // 格式不正确的索引段，应该是字符串数组
                     throw new IllegalArgumentException("malformed indices section, should be an array of strings");
                 }
             } else if (name.equals("partial")) {

@@ -24,7 +24,7 @@ import org.elasticsearch.client.ElasticsearchClient;
 import org.elasticsearch.common.util.ArrayUtils;
 
 /**
- * Get repository request builder
+ * Get repository request builder  获取存储库请求生成器
  */
 public class GetRepositoriesRequestBuilder extends MasterNodeReadOperationRequestBuilder<GetRepositoriesRequest, GetRepositoriesResponse, GetRepositoriesRequestBuilder> {
 

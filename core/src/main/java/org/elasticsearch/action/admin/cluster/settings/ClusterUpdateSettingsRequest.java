@@ -38,7 +38,7 @@ import static org.elasticsearch.common.settings.Settings.readSettingsFromStream;
 import static org.elasticsearch.common.settings.Settings.writeSettingsToStream;
 
 /**
- * Request for an update cluster settings action
+ * Request for an update cluster settings action  请求更新集群设置操作
  */
 public class ClusterUpdateSettingsRequest extends AcknowledgedRequest<ClusterUpdateSettingsRequest> {
 
@@ -67,6 +67,7 @@ public class ClusterUpdateSettingsRequest extends AcknowledgedRequest<ClusterUpd
 
     /**
      * Sets the transient settings to be updated. They will not survive a full cluster restart
+     * 设置要更新的临时设置。它们无法在完全重启集群之后存活
      */
     public ClusterUpdateSettingsRequest transientSettings(Settings settings) {
         this.transientSettings = settings;
@@ -75,6 +76,7 @@ public class ClusterUpdateSettingsRequest extends AcknowledgedRequest<ClusterUpd
 
     /**
      * Sets the transient settings to be updated. They will not survive a full cluster restart
+     * 设置要更新的临时设置。它们无法在完全重启集群之后存活
      */
     public ClusterUpdateSettingsRequest transientSettings(Settings.Builder settings) {
         this.transientSettings = settings.build();
@@ -83,6 +85,7 @@ public class ClusterUpdateSettingsRequest extends AcknowledgedRequest<ClusterUpd
 
     /**
      * Sets the source containing the transient settings to be updated. They will not survive a full cluster restart
+     * 设置包含要更新的瞬态设置的源。它们无法在完全重启集群之后存活
      * @deprecated use {@link #transientSettings(String, XContentType)} to avoid content type detection
      */
     @Deprecated
@@ -93,6 +96,7 @@ public class ClusterUpdateSettingsRequest extends AcknowledgedRequest<ClusterUpd
 
     /**
      * Sets the source containing the transient settings to be updated. They will not survive a full cluster restart
+     * 设置包含要更新的瞬态设置的源。它们无法在完全重启集群之后存活
      */
     public ClusterUpdateSettingsRequest transientSettings(String source, XContentType xContentType) {
         this.transientSettings = Settings.builder().loadFromSource(source, xContentType).build();

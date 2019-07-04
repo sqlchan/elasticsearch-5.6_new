@@ -26,7 +26,7 @@ import org.elasticsearch.common.io.stream.StreamOutput;
 import java.io.IOException;
 
 /**
- * Unregister repository response
+ * Unregister repository response    注销库响应
  */
 public class DeleteRepositoryResponse extends AcknowledgedResponse {
 

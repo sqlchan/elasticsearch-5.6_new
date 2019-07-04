@@ -52,6 +52,7 @@ public class GetSnapshotsRequest extends MasterNodeRequest<GetSnapshotsRequest> 
 
     /**
      * Constructs a new get snapshots request with given repository name and list of snapshots
+     * 使用给定的存储库名称和快照列表构造一个新的get快照请求
      *
      * @param repository repository name
      * @param snapshots  list of snapshots

@@ -57,7 +57,7 @@ public class ClusterSearchShardsRequest extends MasterNodeReadRequest<ClusterSea
     }
 
     /**
-     * Sets the indices the search will be executed on.
+     * Sets the indices the search will be executed on.   设置将在其上执行搜索的索引。
      */
     @Override
     public ClusterSearchShardsRequest indices(String... indices) {
@@ -89,6 +89,7 @@ public class ClusterSearchShardsRequest extends MasterNodeReadRequest<ClusterSea
 
     /**
      * A comma separated list of routing values to control the shards the search will be executed on.
+     * 一个逗号分隔的路由值列表，用于控制搜索的碎片。
      */
     public String routing() {
         return this.routing;
@@ -96,6 +97,7 @@ public class ClusterSearchShardsRequest extends MasterNodeReadRequest<ClusterSea
 
     /**
      * A comma separated list of routing values to control the shards the search will be executed on.
+     * 一个逗号分隔的路由值列表，用于控制搜索的碎片。
      */
     public ClusterSearchShardsRequest routing(String routing) {
         this.routing = routing;
@@ -104,6 +106,7 @@ public class ClusterSearchShardsRequest extends MasterNodeReadRequest<ClusterSea
 
     /**
      * The routing values to control the shards that the search will be executed on.
+     * 用于控制将在其上执行搜索的碎片的路由值。
      */
     public ClusterSearchShardsRequest routing(String... routings) {
         this.routing = Strings.arrayToCommaDelimitedString(routings);
@@ -114,6 +117,8 @@ public class ClusterSearchShardsRequest extends MasterNodeReadRequest<ClusterSea
      * Sets the preference to execute the search. Defaults to randomize across shards. Can be set to
      * <tt>_local</tt> to prefer local shards, <tt>_primary</tt> to execute only on primary shards, or
      * a custom value, which guarantees that the same order will be used across different requests.
+     * 设置执行搜索的首选项。默认设置为在碎片之间随机化。可以将其设置为_local以选择本地碎片，
+     * _primary仅在主碎片上执行，或者自定义值，该值确保在不同的请求之间使用相同的顺序。
      */
     public ClusterSearchShardsRequest preference(String preference) {
         this.preference = preference;

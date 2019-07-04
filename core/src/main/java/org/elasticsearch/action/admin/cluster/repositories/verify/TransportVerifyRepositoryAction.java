@@ -35,7 +35,7 @@ import org.elasticsearch.threadpool.ThreadPool;
 import org.elasticsearch.transport.TransportService;
 
 /**
- * Transport action for verifying repository operation
+ * Transport action for verifying repository operation  用于验证存储库操作的传输操作
  */
 public class TransportVerifyRepositoryAction extends TransportMasterNodeAction<VerifyRepositoryRequest, VerifyRepositoryResponse> {
 

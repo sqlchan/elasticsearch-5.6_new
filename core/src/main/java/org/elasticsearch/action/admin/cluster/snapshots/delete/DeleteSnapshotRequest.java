@@ -29,11 +29,12 @@ import java.io.IOException;
 import static org.elasticsearch.action.ValidateActions.addValidationError;
 
 /**
- * Delete snapshot request
+ * Delete snapshot request 删除快照请求
  * <p>
  * Delete snapshot request removes the snapshot record from the repository and cleans up all
  * files that are associated with this particular snapshot. All files that are shared with
  * at least one other existing snapshot are left intact.
+ * Delete snapshot请求从存储库中删除快照记录，并清除与此特定快照关联的所有文件。与至少一个其他现有快照共享的所有文件都保持完整。
  */
 public class DeleteSnapshotRequest extends MasterNodeRequest<DeleteSnapshotRequest> {
 

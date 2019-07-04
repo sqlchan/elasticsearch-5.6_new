@@ -35,7 +35,7 @@ import org.elasticsearch.threadpool.ThreadPool;
 import org.elasticsearch.transport.TransportService;
 
 /**
- * Transport action for unregister repository operation
+ * Transport action for unregister repository operation    取消注册存储库操作的传输操作
  */
 public class TransportDeleteRepositoryAction extends TransportMasterNodeAction<DeleteRepositoryRequest, DeleteRepositoryResponse> {
 

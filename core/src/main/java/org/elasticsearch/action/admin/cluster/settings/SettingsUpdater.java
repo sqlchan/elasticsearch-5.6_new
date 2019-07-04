@@ -30,6 +30,7 @@ import static org.elasticsearch.cluster.ClusterState.builder;
 /**
  * Updates transient and persistent cluster state settings if there are any changes
  * due to the update.
+ * 如果由于更新而发生任何更改，则更新临时和持久集群状态设置。
  */
 final class SettingsUpdater {
     final Settings.Builder transientUpdates = Settings.builder();
@@ -87,6 +88,7 @@ final class SettingsUpdater {
         /*
          * Now we try to apply things and if they are invalid we fail. This dry run will validate, parse settings, and trigger deprecation
          * logging, but will not actually apply them.
+         * 现在我们尝试应用一些东西，如果它们无效，我们就失败了。此演练将验证、解析设置并触发弃用日志记录，但实际上并不应用它们。
          */
         final Settings settings = clusterState.metaData().settings();
         clusterSettings.validateUpdate(settings);

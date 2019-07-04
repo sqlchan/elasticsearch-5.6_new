@@ -62,6 +62,7 @@ public class TransportCreateSnapshotAction extends TransportMasterNodeAction<Cre
     @Override
     protected ClusterBlockException checkBlock(CreateSnapshotRequest request, ClusterState state) {
         // We are reading the cluster metadata and indices - so we need to check both blocks
+        // 我们正在读取集群元数据和索引——因此我们需要检查这两个块
         ClusterBlockException clusterBlockException = state.blocks().globalBlockedException(ClusterBlockLevel.METADATA_READ);
         if (clusterBlockException != null) {
             return clusterBlockException;

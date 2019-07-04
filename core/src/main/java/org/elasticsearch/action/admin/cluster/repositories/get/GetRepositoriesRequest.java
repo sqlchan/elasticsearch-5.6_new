@@ -30,7 +30,7 @@ import java.io.IOException;
 import static org.elasticsearch.action.ValidateActions.addValidationError;
 
 /**
- * Get repository request
+ * Get repository request    得到库请求
  */
 public class GetRepositoriesRequest extends MasterNodeReadRequest<GetRepositoriesRequest> {
 
@@ -41,9 +41,11 @@ public class GetRepositoriesRequest extends MasterNodeReadRequest<GetRepositorie
 
     /**
      * Constructs a new get repositories request with a list of repositories.
+     * 使用存储库列表构造一个新的get存储库请求。
      * <p>
      * If the list of repositories is empty or it contains a single element "_all", all registered repositories
      * are returned.
+     * 如果存储库列表为空，或者它包含单个元素“_all”，则返回所有已注册的存储库。
      *
      * @param repositories list of repositories
      */
@@ -61,7 +63,7 @@ public class GetRepositoriesRequest extends MasterNodeReadRequest<GetRepositorie
     }
 
     /**
-     * The names of the repositories.
+     * The names of the repositories.  存储库的名称。
      *
      * @return list of repositories
      */
@@ -70,10 +72,11 @@ public class GetRepositoriesRequest extends MasterNodeReadRequest<GetRepositorie
     }
 
     /**
-     * Sets the list or repositories.
+     * Sets the list or repositories.  设置列表或存储库。
      * <p>
      * If the list of repositories is empty or it contains a single element "_all", all registered repositories
      * are returned.
+     * 如果存储库列表为空，或者它包含单个元素“_all”，则返回所有已注册的存储库。
      *
      * @param repositories list of repositories
      * @return this request

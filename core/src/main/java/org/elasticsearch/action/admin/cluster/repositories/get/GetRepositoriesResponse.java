@@ -32,7 +32,7 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Get repositories response
+ * Get repositories response    得到库响应
  */
 public class GetRepositoriesResponse extends ActionResponse implements Iterable<RepositoryMetaData> {
 

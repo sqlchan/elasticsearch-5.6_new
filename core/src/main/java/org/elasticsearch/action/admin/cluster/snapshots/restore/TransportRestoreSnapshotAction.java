@@ -45,6 +45,7 @@ import static org.elasticsearch.snapshots.RestoreService.restoreInProgress;
 
 /**
  * Transport action for restore snapshot operation
+ * 恢复快照操作的传输操作
  */
 public class TransportRestoreSnapshotAction extends TransportMasterNodeAction<RestoreSnapshotRequest, RestoreSnapshotResponse> {
     private final RestoreService restoreService;
@@ -71,6 +72,7 @@ public class TransportRestoreSnapshotAction extends TransportMasterNodeAction<Re
     protected ClusterBlockException checkBlock(RestoreSnapshotRequest request, ClusterState state) {
         // Restoring a snapshot might change the global state and create/change an index,
         // so we need to check for METADATA_WRITE and WRITE blocks
+        // 恢复快照可能会更改全局状态并创建/更改索引，因此我们需要检查METADATA_WRITE和WRITE块
         ClusterBlockException blockException = state.blocks().globalBlockedException(ClusterBlockLevel.METADATA_WRITE);
         if (blockException != null) {
             return blockException;
@@ -101,6 +103,8 @@ public class TransportRestoreSnapshotAction extends TransportMasterNodeAction<Re
                                 // When there is a master failure after a restore has been started, this listener might not be registered
                                 // on the current master and as such it might miss some intermediary cluster states due to batching.
                                 // Clean up listener in that case and acknowledge completion of restore operation to client.
+                                // 当启动恢复后出现主服务器故障时，此侦听器可能不会在当前主服务器上注册，因此可能由于批处理而错过一些中间集群状态。
+                                // 在这种情况下清理侦听器，并向客户机确认恢复操作完成。
                                 clusterService.removeListener(this);
                                 listener.onResponse(new RestoreSnapshotResponse(null));
                             } else if (newEntry == null) {
@@ -117,6 +121,7 @@ public class TransportRestoreSnapshotAction extends TransportMasterNodeAction<Re
                                 listener.onResponse(response);
                             } else {
                                 // restore not completed yet, wait for next cluster state update
+                                // 还原尚未完成，请等待下一次集群状态更新
                             }
                         }
                     };

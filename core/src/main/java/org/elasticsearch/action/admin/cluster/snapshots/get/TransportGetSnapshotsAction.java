@@ -51,6 +51,7 @@ import java.util.stream.Collectors;
 
 /**
  * Transport Action for get snapshots operation
+ * get快照操作的传输操作
  */
 public class TransportGetSnapshotsAction extends TransportMasterNodeAction<GetSnapshotsRequest, GetSnapshotsResponse> {
     private final SnapshotsService snapshotsService;
@@ -138,9 +139,10 @@ public class TransportGetSnapshotsAction extends TransportMasterNodeAction<GetSn
             } else {
                 if (repositoryData != null) {
                     // want non-current snapshots as well, which are found in the repository data
+                    // 还需要在存储库数据中找到的非当前快照
                     snapshotInfos = buildSimpleSnapshotInfos(toResolve, repositoryData, currentSnapshots);
                 } else {
-                    // only want current snapshots
+                    // only want current snapshots  只需要当前快照
                     snapshotInfos = currentSnapshots.stream().map(SnapshotInfo::basic).collect(Collectors.toList());
                     CollectionUtil.timSort(snapshotInfos);
                 }

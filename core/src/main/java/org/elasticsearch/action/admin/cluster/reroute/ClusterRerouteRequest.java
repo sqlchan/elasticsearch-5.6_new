@@ -31,6 +31,7 @@ import java.util.Objects;
 
 /**
  * Request to submit cluster reroute allocation commands
+ * 请求提交集群重路由分配命令
  */
 public class ClusterRerouteRequest extends AcknowledgedRequest<ClusterRerouteRequest> {
     private AllocationCommands commands = new AllocationCommands();
@@ -44,6 +45,7 @@ public class ClusterRerouteRequest extends AcknowledgedRequest<ClusterRerouteReq
     /**
      * Adds allocation commands to be applied to the cluster. Note, can be empty, in which case
      * will simply run a simple "reroute".
+     * 添加要应用于集群的分配命令。注意，可以为空，在这种情况下将简单地运行一个简单的“重新路由”。
      */
     public ClusterRerouteRequest add(AllocationCommand... commands) {
         this.commands.add(commands);
@@ -53,6 +55,7 @@ public class ClusterRerouteRequest extends AcknowledgedRequest<ClusterRerouteReq
     /**
      * Sets a dry run flag (defaults to <tt>false</tt>) allowing to run the commands without
      * actually applying them to the cluster state, and getting the resulting cluster state back.
+     * 设置一个预运行标志(默认值为<tt>false</tt>)，允许运行命令，而不需要将它们实际应用于集群状态，并返回结果集群状态。
      */
     public ClusterRerouteRequest dryRun(boolean dryRun) {
         this.dryRun = dryRun;
@@ -62,6 +65,7 @@ public class ClusterRerouteRequest extends AcknowledgedRequest<ClusterRerouteReq
     /**
      * Returns the current dry run flag which allows to run the commands without actually applying them,
      * just to get back the resulting cluster state back.
+     * 返回当前的预运行标志，该标志允许在不实际应用命令的情况下运行命令，只返回生成的集群状态。
      */
     public boolean dryRun() {
         return this.dryRun;
@@ -71,6 +75,7 @@ public class ClusterRerouteRequest extends AcknowledgedRequest<ClusterRerouteReq
      * Sets the explain flag, which will collect information about the reroute
      * request without executing the actions. Similar to dryRun,
      * but human-readable.
+     * 设置explain标志，该标志将收集关于重新路由请求的信息，而不执行操作。类似于dryRun，但人类可读。
      */
     public ClusterRerouteRequest explain(boolean explain) {
         this.explain = explain;
@@ -80,6 +85,7 @@ public class ClusterRerouteRequest extends AcknowledgedRequest<ClusterRerouteReq
     /**
      * Sets the retry failed flag (defaults to <tt>false</tt>). If true, the
      * request will retry allocating shards that can't currently be allocated due to too many allocation failures.
+     * 设置重试失败标志(默认为<tt>false</tt>)。如果为真，则请求将重试分配由于太多分配失败而当前无法分配的碎片。
      */
     public ClusterRerouteRequest setRetryFailed(boolean retryFailed) {
         this.retryFailed = retryFailed;
@@ -87,7 +93,7 @@ public class ClusterRerouteRequest extends AcknowledgedRequest<ClusterRerouteReq
     }
 
     /**
-     * Returns the current explain flag
+     * Returns the current explain flag  返回当前解释标志
      */
     public boolean explain() {
         return this.explain;

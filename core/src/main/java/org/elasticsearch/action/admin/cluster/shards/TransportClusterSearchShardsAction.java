@@ -60,7 +60,7 @@ public class TransportClusterSearchShardsAction extends
 
     @Override
     protected String executor() {
-        // all in memory work here...
+        // all in memory work here...  所有内存都在这里工作
         return ThreadPool.Names.SAME;
     }
 

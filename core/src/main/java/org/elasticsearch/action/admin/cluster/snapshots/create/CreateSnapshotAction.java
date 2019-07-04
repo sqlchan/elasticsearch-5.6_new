@@ -23,7 +23,7 @@ import org.elasticsearch.action.Action;
 import org.elasticsearch.client.ElasticsearchClient;
 
 /**
- * Create snapshot action
+ * Create snapshot action 创建快照操作
  */
 public class CreateSnapshotAction extends Action<CreateSnapshotRequest, CreateSnapshotResponse, CreateSnapshotRequestBuilder> {
 

@@ -23,7 +23,7 @@ import org.elasticsearch.action.Action;
 import org.elasticsearch.client.ElasticsearchClient;
 
 /**
- * Get repositories action
+ * Get repositories action    获取存储库操作
  */
 public class GetRepositoriesAction extends Action<GetRepositoriesRequest, GetRepositoriesResponse, GetRepositoriesRequestBuilder> {
 

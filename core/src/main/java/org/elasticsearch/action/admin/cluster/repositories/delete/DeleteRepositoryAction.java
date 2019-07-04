@@ -23,7 +23,7 @@ import org.elasticsearch.action.Action;
 import org.elasticsearch.client.ElasticsearchClient;
 
 /**
- * Unregister repository action
+ * Unregister repository action  注销库行动
  */
 public class DeleteRepositoryAction extends Action<DeleteRepositoryRequest, DeleteRepositoryResponse, DeleteRepositoryRequestBuilder> {
 

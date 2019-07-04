@@ -43,7 +43,7 @@ import static org.elasticsearch.common.settings.Settings.Builder.EMPTY_SETTINGS;
 import static org.elasticsearch.common.xcontent.support.XContentMapValues.lenientNodeBooleanValue;
 
 /**
- * Restore snapshot request
+ * Restore snapshot request   恢复快照请求
  */
 public class RestoreSnapshotRequest extends MasterNodeRequest<RestoreSnapshotRequest> {
 

@@ -29,9 +29,10 @@ import java.io.IOException;
 import static org.elasticsearch.action.ValidateActions.addValidationError;
 
 /**
- * Unregister repository request.
+ * Unregister repository request.  注销请求存储库。
  * <p>
  * The unregister repository command just unregisters the repository. No data is getting deleted from the repository.
+ * 取消注册存储库命令只是取消注册存储库。没有从存储库中删除任何数据。
  */
 public class DeleteRepositoryRequest extends AcknowledgedRequest<DeleteRepositoryRequest> {
 
@@ -42,6 +43,7 @@ public class DeleteRepositoryRequest extends AcknowledgedRequest<DeleteRepositor
 
     /**
      * Constructs a new unregister repository request with the provided name.
+     * 使用提供的名称构造一个新的取消注册存储库请求。
      *
      * @param name name of the repository
      */
@@ -60,6 +62,7 @@ public class DeleteRepositoryRequest extends AcknowledgedRequest<DeleteRepositor
 
     /**
      * Sets the name of the repository to unregister.
+     * 设置要取消注册的存储库名称。
      *
      * @param name name of the repository
      */
@@ -69,7 +72,7 @@ public class DeleteRepositoryRequest extends AcknowledgedRequest<DeleteRepositor
     }
 
     /**
-     * The name of the repository.
+     * The name of the repository.  存储库的名称。
      *
      * @return the name of the repository
      */

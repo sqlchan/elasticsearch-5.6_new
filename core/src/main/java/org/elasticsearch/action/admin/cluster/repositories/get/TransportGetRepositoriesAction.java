@@ -45,6 +45,7 @@ import java.util.Set;
 
 /**
  * Transport action for get repositories operation
+ * 获取存储库操作的传输操作
  */
 public class TransportGetRepositoriesAction extends TransportMasterNodeReadAction<GetRepositoriesRequest, GetRepositoriesResponse> {
 

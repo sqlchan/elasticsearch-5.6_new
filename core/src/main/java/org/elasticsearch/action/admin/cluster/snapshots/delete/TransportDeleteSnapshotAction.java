@@ -60,6 +60,7 @@ public class TransportDeleteSnapshotAction extends TransportMasterNodeAction<Del
     @Override
     protected ClusterBlockException checkBlock(DeleteSnapshotRequest request, ClusterState state) {
         // Cluster is not affected but we look up repositories in metadata
+        // 集群不受影响，但是我们在元数据中查找存储库
         return state.blocks().globalBlockedException(ClusterBlockLevel.METADATA_READ);
     }
 
